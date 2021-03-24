@@ -1,0 +1,8 @@
+{
+  "name": "give_backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kelliematteson/the_give_app.git",
+  "author": "Kellie Matteson <kelliematteson@yahoo.com>",
+  "license": "MIT"
+}
