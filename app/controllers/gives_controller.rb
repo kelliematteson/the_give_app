@@ -19,6 +19,18 @@ class GivesController < ApplicationController
         end
     end
 
+    def update
+        give = Give.find(params[:id])
+        give.update(give_params)
+        render(json: { give: give})
+    end
+
+    def destroy
+            give = Give.destroy(params[:id])
+            render(status: 204)
+    end
+
+
     private
     def give_params
         params.required(:give).permit(:give_name, :give_description, :give_image, :giver)
