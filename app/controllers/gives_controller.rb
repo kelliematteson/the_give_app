@@ -1,32 +1,32 @@
 class GivesController < ApplicationController
     def index
-      render(json: { gives: Give.all })
+      render(json: { gives: Gife.all })
     end
   
     def show
-      render(json: Give.find(params[:id]))
+      render(json: Gife.find(params[:id]))
     end
   
     def create
-        Give.create(params[:give])
-        puts "this is params: #{params[:give]}"
-        
+        give = Gife.create(gife_params)
+        puts "this is params: #{params[:gife]}"
+        render(json: give )
     end
   
     def update
-      give = Give.find(params[:id])
-      give.update(give_params)
-      render(json: { give: give })
+      give = Gife.find(params[:id])
+      give.update(gife_params)
+      render(json: { gife: give })
     end
   
     def destroy
-      give = Give.destroy(params[:id])
+      give = Gife.destroy(params[:id])
       render(status: 204)
     end
   
     private
   
-    def give_params
-      params.required(:give).permit(:give_name, :give_description, :give_image, :giver)
+    def gife_params
+      params.required(:gife).permit(:give_name, :give_description, :give_image, :giver)
     end
   end
