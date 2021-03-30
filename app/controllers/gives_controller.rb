@@ -20,8 +20,10 @@ class GivesController < ApplicationController
     end
   
     def destroy
-      give = Gife.destroy(params[:id])
-      render(status: 204)
+      id = params["id"]
+      give = Gife.find(id)
+      give.delete()
+      render("Give deleted!")
     end
   
     private
