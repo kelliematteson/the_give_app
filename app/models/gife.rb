@@ -1,3 +1,4 @@
 class Gife < ApplicationRecord
-    validates :give_name, presence: true
+    belongs_to :user
+    validates :give_name, presence: true 
 end
