@@ -11,12 +11,14 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
+gem 'jwt'
+gem 'dotenv-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Faker for seed data
 gem 'faker'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 gem 'hirb'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

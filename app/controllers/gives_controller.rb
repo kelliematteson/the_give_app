@@ -29,6 +29,6 @@ class GivesController < ApplicationController
     private
   
     def gife_params
-      params.required(:gife).permit(:give_name, :give_description, :give_image, :giver)
+      params.required(:gife).permit(:give_name, :give_description, :give_image, :giver, :user_id)
     end
   end

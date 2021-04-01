@@ -1,3 +1,25 @@
 class ApplicationController < ActionController::API
-    # ActionController::Parameters.permit_all_parameters = true
+    
+    def authenticate_token                                                           
+        render json: { status: 401, message: 'Unauthorized' } unless decode_token(bearer_token)
+      end                                                                              
+                                                                                       
+      def bearer_token                                                                 
+        header = request.env['HTTP_AUTHORIZATION']                                     
+        pattern = /^Bearer /                                                           
+        header.gsub(pattern, '') if header && header.match(pattern)                    
+      end                                                                              
+                                                                                       
+      def decode_token(token_input)  
+        JWT.decode(token_input, ENV['JWT_SECRET'], true) 
+      rescue
+        render json: { status: 401, message: 'Unauthorized' }                                      
+      end
+      
+      def get_current_client
+        return if !bearer_token
+        decoded_jwt = decode_token(bearer_token)
+        Client.find(decoded_jwt[0]["client"]["id"])
+      end
+
 end
