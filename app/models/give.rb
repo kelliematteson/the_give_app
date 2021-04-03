@@ -1,2 +1,0 @@
-class Give < ApplicationRecord
-end
