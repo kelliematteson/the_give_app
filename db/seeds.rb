@@ -13,17 +13,17 @@
 #         giver: Faker::Name.unique.name
 #     )
 # end
-User.create([
-  { name: 'Kellie Matteson', email: 'kmatt@gmail.com', password: 'roccoAndmelody' },
-  { name: 'Laura Randall', email: 'lauraloveslife@gmail.com', password: 'bestPasswordEva' }
+Client.create([
+  { username: 'Freddy', password: 'Freddy' },
+  { username: 'Diane', password: 'Diane' }
 ])
-p 'seeded all users'
+p 'seeded all clients'
 Gife.create([
-  { give_name: 'cool toaster', give_description: 'still works!', give_image: 'toaster.jpg', giver: 'old friend', user_id: 1 },
-  { give_name: 'fridge', give_description: 'still works, but really ugly!', give_image: 'fridge.jpg', giver: 'old friend', user_id: 1 },
-  { give_name: 'smart tv', give_description: 'better than a dumb one', give_image: 'tv.jpg', giver: 'old friend', user_id: 1 },
-  { give_name: 'bed', give_description: 'pretty old', give_image: 'bed.jpg', giver: 'old friend', user_id: 2 },
-  { give_name: 'dresser', give_description: 'you will love it, i promise', give_image: 'dresser.jpg', giver: 'old friend', user_id: 2 },
-  { give_name: 'dress', give_description: 'beautiful and swingy', give_image: 'dress.jpg', giver: 'old friend', user_id: 2 },
+  { give_name: 'nice couch', give_description: 'stylish and comfy', give_image: 'beigeCouch.jpg', giver: 'old friend', client_id: 1 },
+  { give_name: 'bookshelf', give_description: 'like brand new', give_image: 'bookshelf.jpg', giver: 'old friend', client_id: 1 },
+  { give_name: 'uncomfortable chair', give_description: 'hurts my back, needs cushions', give_image: 'chair.jpg', giver: 'old friend', client_id: 1 },
+  { give_name: 'mirror', give_description: 'stunning and free!', give_image: 'coolMirror.jpg', giver: 'old friend', client_id: 2 },
+  { give_name: 'shoes', give_description: 'so great but not the right size', give_image: 'coolShoes.jpg', giver: 'old friend', client_id: 2 },
+  { give_name: 'dresser', give_description: 'lots of storage', give_image: 'dresser.jpg', giver: 'old friend', client_id: 2 },
 ])
 p 'seeded all gives'

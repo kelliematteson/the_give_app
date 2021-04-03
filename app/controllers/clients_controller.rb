@@ -26,12 +26,7 @@ class ClientsController < ApplicationController
     render json: get_current_client
   end
 
-  def authorize_client
-    puts "AUTHORIZE CLIENT"
-    puts "client id: #{get_current_client.id}"
-    puts "params: #{params[:id]}"
-    render json: { status: 401, message: 'Unauthorized'} unless get_current_client.id == params[:id].to_i
-  end
+  
 
   # POST /clients
   def create
@@ -59,6 +54,12 @@ class ClientsController < ApplicationController
   end
 
   private
+    def authorize_client
+      puts "AUTHORIZE CLIENT"
+      puts "client id: #{get_current_client.id}"
+      puts "params: #{params[:id]}"
+      render json: { status: 401, message: 'Unauthorized'} unless get_current_client.id == params[:id].to_i
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_client
       @client = Client.find(params[:id])
@@ -83,6 +84,6 @@ class ClientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def client_params
-      params.require(:client).permit(:username, :password_digest)
+      params.require(:client).permit(:username, :password)
     end
 end
